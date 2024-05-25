@@ -57,7 +57,7 @@ const renderLink = (linkSent, linkRecieved) => {
     <button class="btn btn-copy">Copy</button>
     <button class="btn btn-delete"><i class="fa-solid fa-trash"></i></button>
   </div>`;
-  shortenedLinksContainer.insertAdjacentHTML("beforeend", html);
+  shortenedLinksContainer.insertAdjacentHTML("afterbegin", html);
   copyBtns = document.querySelectorAll(".btn-copy");
   deleteBtns = document.querySelectorAll(".btn-delete");
   deleteLink();
