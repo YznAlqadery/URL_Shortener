@@ -455,6 +455,7 @@ h6 {
 .btn-delete:hover {
   background-color: hsl(0, 87%, 59%);
 }
+
 @media screen and (width <=830px) {
   .shorten .container .btn-shorten {
     padding: 0.8rem;

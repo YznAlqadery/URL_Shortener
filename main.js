@@ -67,9 +67,23 @@ const renderLink = (linkSent, linkRecieved) => {
 const shortenLink = async () => {
   try {
     const url = inputLink.value;
+    if (!url) {
+      errorText.textContent = "Please enter a URL.";
+      return;
+    }
+    shortenBtn.disabled = true;
+    shortenBtn.style.backgroundColor = "grey";
+    shortenBtn.textContent = "Shortening..";
+    const timeout = setTimeout(() => {
+      shortenBtn.disabled = false;
+      shortenBtn.textContent = "Shorten It!";
+      shortenBtn.style.backgroundColor = " hsl(180, 66%, 59%)";
+    }, 1000);
+
     const response = await fetch(
       `https://tinyurl.com/api-create.php?url=` + encodeURIComponent(url)
     );
+
     const data = await response.text();
     // Add link object with original link and shortened link to links array and local storage
     links.push({ url, data });
